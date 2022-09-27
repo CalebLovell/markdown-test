@@ -12,5 +12,5 @@ const getMarkdown = async () => {
 
 export default function Markdown() {
 	const { data: markdown } = useQuery(['markdown'], () => getMarkdown());
-	return <MarkdownDisplayer>{markdown}</MarkdownDisplayer>;
+	return <MarkdownDisplayer>{markdown ? markdown : 'loading'}</MarkdownDisplayer>;
 }
